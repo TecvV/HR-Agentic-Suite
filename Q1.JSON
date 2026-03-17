@@ -1,0 +1,632 @@
+[
+  {
+    "quarter": "Q1",
+    "manager_name": "Aravind Swamy",
+    "team": [
+      {
+        "name": "Aman",
+        "role": "Sales",
+        "kpi_score": 110,
+        "manager_notes": "Needs better reporting cadence",
+        "promoted": false,
+        "reason": "Aman has demonstrated exceptional prowess in client acquisition, exceeding his quarterly target by a solid 10%. However, his promotion to Senior Sales Executive is being deferred because of a persistent lack of diligence in CRM maintenance. His reporting cadence is often delayed by 48-72 hours, which disrupts the sales forecasting accuracy for the entire department. We need to see him integrate administrative discipline into his daily workflow to prove he can handle the high-level reporting requirements of a senior role before moving him up.",
+        "ai_analytics": {
+          "sentiment_score": 0.65,
+          "retention_risk_level": "Low",
+          "potential_rating": 8,
+          "collaboration_index": 0.72,
+          "skill_proficiency": {
+            "Negotiation": 9,
+            "CRM_Admin": 4,
+            "Strategy": 6
+          },
+          "flight_risk_probability": 0.12
+        }
+      },
+      {
+        "name": "Riya",
+        "role": "Developer",
+        "kpi_score": 95,
+        "manager_notes": "Could improve documentation depth",
+        "promoted": false,
+        "reason": "Riya’s code quality is consistently high, and she is a reliable member of the scrum team. However, her technical documentation has been a recurring bottleneck during the QA phase. Several of her tickets required additional explanation because the initial documentation was insufficient for cross-team handoffs. A promotion to Senior Developer requires a level of communication that ensures others can build upon her work without constant intervention. We will review this again once her documentation quality matches her coding speed and depth.",
+        "ai_analytics": {
+          "sentiment_score": 0.82,
+          "retention_risk_level": "Medium",
+          "potential_rating": 7,
+          "collaboration_index": 0.95,
+          "skill_proficiency": {
+            "Coding": 8,
+            "Documentation": 3,
+            "Teamwork": 9
+          },
+          "flight_risk_probability": 0.25
+        }
+      },
+      {
+        "name": "Neha",
+        "role": "HR Recruiter",
+        "kpi_score": 102,
+        "manager_notes": "Needs stronger hiring analytics",
+        "promoted": false,
+        "reason": "Neha is an excellent cultural ambassador for the company and maintains great candidate rapport, meeting her hiring target for the quarter. However, her recruitment reports lack the deep analytical insights—like time-to-fill trends or cost-per-hire variance—required for a Lead role. She needs to master our new analytics dashboard and begin using data to drive her sourcing decisions before we can move her into a more strategic leadership position that involves heavy budgeting and forecasting.",
+        "ai_analytics": {
+          "sentiment_score": 0.78,
+          "retention_risk_level": "Low",
+          "potential_rating": 8,
+          "collaboration_index": 0.88,
+          "skill_proficiency": {
+            "Sourcing": 9,
+            "Analytics": 4,
+            "Communication": 9
+          },
+          "flight_risk_probability": 0.1
+        }
+      },
+      {
+        "name": "Arjun",
+        "role": "Sales",
+        "kpi_score": 92,
+        "manager_notes": "Under stress with late follow-ups; pipeline bottleneck persists",
+        "promoted": false,
+        "reason": "Arjun is a naturally gifted relationship builder, but his actual sales output fell short of the 95% minimum threshold this quarter. While his initial outreach numbers are high, there is a significant drop-off in the final negotiation phase. This suggests a lack of pipeline discipline and an inability to close high-intent leads under pressure. He will remain at his current level while we provide targeted training on closing techniques and lead qualification to improve his conversion ratios in the upcoming quarter.",
+        "ai_analytics": {
+          "sentiment_score": 0.6,
+          "retention_risk_level": "High",
+          "potential_rating": 6,
+          "collaboration_index": 0.75,
+          "skill_proficiency": {
+            "Networking": 9,
+            "Closing": 5,
+            "Pipeline_Mgmt": 4
+          },
+          "flight_risk_probability": 0.42
+        }
+      },
+      {
+        "name": "Priya",
+        "role": "Developer",
+        "kpi_score": 112,
+        "manager_notes": "Can delegate more effectively",
+        "promoted": true,
+        "reason": "Priya has moved from a standard contributor to a technical pillar within the engineering team. Her 112% delivery rate is particularly impressive given the complexity of the microservices she refactored this quarter. While she has a tendency to take on too much work personally rather than delegating tasks to juniors, her technical foresight has saved the team an estimated 40 hours of potential rework. Her promotion to Senior Developer II is a recognition of this high-level impact and technical mastery.",
+        "ai_analytics": {
+          "sentiment_score": 0.91,
+          "retention_risk_level": "Low",
+          "potential_rating": 10,
+          "collaboration_index": 0.6,
+          "skill_proficiency": {
+            "Architecture": 9,
+            "Leadership": 7,
+            "Mentorship": 5
+          },
+          "flight_risk_probability": 0.05
+        }
+      },
+      {
+        "name": "Karan",
+        "role": "HR Recruiter",
+        "kpi_score": 91,
+        "manager_notes": "Needs faster screening turnaround",
+        "promoted": false,
+        "reason": "Karan is very thorough in his evaluations, which we appreciate for high-stakes roles. Unfortunately, this thoroughness has led to a screening turnaround time that is significantly slower than the departmental average. We have lost two high-potential candidates to competitors because our process moved too slowly in the initial phases. He needs to find a way to balance his attention to detail with the speed required in a competitive talent market before a promotion can be realistically considered.",
+        "ai_analytics": {
+          "sentiment_score": 0.6,
+          "retention_risk_level": "Medium",
+          "potential_rating": 7,
+          "collaboration_index": 0.82,
+          "skill_proficiency": {
+            "Interviewing": 9,
+            "Efficiency": 4,
+            "Organization": 8
+          },
+          "flight_risk_probability": 0.2
+        }
+      }
+    ]
+  },
+  {
+    "quarter": "Q1",
+    "manager_name": "Elena Rodriguez",
+    "team": [
+      {
+        "name": "Sonia",
+        "role": "Sales",
+        "kpi_score": 118,
+        "manager_notes": "Should share best practices with team",
+        "promoted": true,
+        "reason": "Sonia has been the standout performer in enterprise sales this quarter. Her 118% KPI score was driven by her mastery of complex negotiations, specifically closing the firm's largest contract of the year ahead of schedule. Her promotion is a recognition of her status as a top-tier revenue generator. Moving forward, she will be expected to lead weekly workshops to share her negotiation frameworks and mentor junior reps on managing high-value accounts.",
+        "ai_analytics": {
+          "sentiment_score": 0.88,
+          "retention_risk_level": "Low",
+          "potential_rating": 9,
+          "collaboration_index": 0.55,
+          "skill_proficiency": {
+            "Enterprise_Sales": 10,
+            "Public_Speaking": 8,
+            "Coaching": 4
+          },
+          "flight_risk_probability": 0.08
+        }
+      },
+      {
+        "name": "Vikram",
+        "role": "Developer",
+        "kpi_score": 84,
+        "manager_notes": "Needs better estimation accuracy",
+        "promoted": false,
+        "reason": "Vikram is technically proficient at debugging, but his project management and scoping skills are currently a weakness. This quarter, he missed three major sprint deadlines because his initial estimations were off by more than 30%, causing downstream delays for the DevOps team. He needs to work more closely with the Product Owners to understand requirement scoping before he can be considered for a role involving more autonomy or leadership responsibilities.",
+        "ai_analytics": {
+          "sentiment_score": 0.45,
+          "retention_risk_level": "High",
+          "potential_rating": 6,
+          "collaboration_index": 0.8,
+          "skill_proficiency": {
+            "Debugging": 9,
+            "Project_Estimation": 2,
+            "Backend": 7
+          },
+          "flight_risk_probability": 0.45
+        }
+      },
+      {
+        "name": "Meera",
+        "role": "HR Recruiter",
+        "kpi_score": 103,
+        "manager_notes": "Improved stakeholder alignment, but energy remains stretched",
+        "promoted": false,
+        "reason": "Meera has done a fantastic job managing the expectations of our engineering leads and hit 109% of her hiring target. However, we are holding her promotion until next quarter to see if she can maintain this pace while also improving our interview panel calibration. We had a few 'mismatched' candidates reach final rounds, suggesting her initial screening needs better alignment with technical requirements. If she fixes these calibration issues, she is a top candidate for a Senior role.",
+        "ai_analytics": {
+          "sentiment_score": 0.57,
+          "retention_risk_level": "Low",
+          "potential_rating": 8,
+          "collaboration_index": 0.63,
+          "skill_proficiency": {
+            "Stakeholder_Mgmt": 9,
+            "Technical_Sourcing": 8,
+            "Calibration": 5
+          },
+          "flight_risk_probability": 0.38
+        }
+      },
+      {
+        "name": "Rahul",
+        "role": "Sales",
+        "kpi_score": 97,
+        "manager_notes": "Could improve objection handling",
+        "promoted": false,
+        "reason": "Rahul is a steady performer, hitting near-target numbers consistently. However, his performance is currently 'stable' rather than 'exceptional.' During observed sales calls, he struggled to pivot when faced with aggressive price objections from prospects, leading to lost opportunities or unnecessarily long sales cycles. We are keeping him at his current level to allow him time to participate in advanced sales training and improve his closing ratio before a promotion.",
+        "ai_analytics": {
+          "sentiment_score": 0.72,
+          "retention_risk_level": "Low",
+          "potential_rating": 7,
+          "collaboration_index": 0.78,
+          "skill_proficiency": {
+            "Resilience": 8,
+            "Objection_Handling": 5,
+            "Follow-up": 9
+          },
+          "flight_risk_probability": 0.15
+        }
+      },
+      {
+        "name": "Anita",
+        "role": "Developer",
+        "kpi_score": 106,
+        "manager_notes": "Needs stronger test coverage ownership",
+        "promoted": false,
+        "reason": "Anita is a reliable developer who always delivers her assigned modules on time. However, she often treats unit testing as an afterthought, leading to a higher-than-average defect rate in the staging environment. To reach a Senior level, she must take full ownership of the end-to-end quality of her code. We will look for her to implement a 'test-first' approach in the next quarter to demonstrate she is ready for more complex architectural responsibilities.",
+        "ai_analytics": {
+          "sentiment_score": 0.79,
+          "retention_risk_level": "Low",
+          "potential_rating": 7,
+          "collaboration_index": 0.85,
+          "skill_proficiency": {
+            "Unit_Testing": 4,
+            "Reliability": 9,
+            "Code_Quality": 7
+          },
+          "flight_risk_probability": 0.09
+        }
+      },
+      {
+        "name": "Dev",
+        "role": "HR Recruiter",
+        "kpi_score": 87,
+        "manager_notes": "Needs structured sourcing strategy",
+        "promoted": false,
+        "reason": "Dev’s hiring volume was the lowest in the department this quarter. While candidates speak highly of their experience with him, he is not bringing in a high enough volume of qualified leads to meet the company's aggressive growth needs. He relies too heavily on incoming applications rather than active headhunting. He needs to develop a more structured outbound sourcing strategy and improve his raw output before we can discuss further career advancement.",
+        "ai_analytics": {
+          "sentiment_score": 0.68,
+          "retention_risk_level": "Medium",
+          "potential_rating": 6,
+          "collaboration_index": 0.7,
+          "skill_proficiency": {
+            "Candidate_Experience": 9,
+            "Outbound_Sourcing": 3,
+            "Volume": 4
+          },
+          "flight_risk_probability": 0.28
+        }
+      }
+    ]
+  },
+  {
+    "quarter": "Q1",
+    "manager_name": "Marcus Chen",
+    "team": [
+      {
+        "name": "Ishita",
+        "role": "Sales",
+        "kpi_score": 121,
+        "manager_notes": "Should maintain CRM hygiene consistently",
+        "promoted": true,
+        "reason": "Ishita’s performance this quarter has been record-breaking, particularly her ability to upsell into existing accounts, which increased her portfolio revenue by 21%. While her CRM hygiene is a minor point of improvement that needs addressing, her sheer impact on the company's bottom line and her ability to identify untapped revenue streams make her an obvious choice for a Senior Account Manager role immediately. We expect her to lead by example in the coming months.",
+        "ai_analytics": {
+          "sentiment_score": 0.85,
+          "retention_risk_level": "Low",
+          "potential_rating": 10,
+          "collaboration_index": 0.6,
+          "skill_proficiency": {
+            "Upselling": 10,
+            "CRM_Data": 5,
+            "Account_Mgmt": 9
+          },
+          "flight_risk_probability": 0.04
+        }
+      },
+      {
+        "name": "Rohit",
+        "role": "Developer",
+        "kpi_score": 99,
+        "manager_notes": "Strong debugging skills",
+        "promoted": false,
+        "reason": "Rohit is arguably the best troubleshooter on the team, often solving complex bugs that have stumped others for days. However, he currently lacks the high-level design documentation skills required for a promotion. He tends to focus on immediate fixes rather than documenting the broader architectural changes. We are looking for him to improve his technical writing and demonstrate more architectural foresight in the next two quarters before moving him up.",
+        "ai_analytics": {
+          "sentiment_score": 0.74,
+          "retention_risk_level": "Low",
+          "potential_rating": 8,
+          "collaboration_index": 0.82,
+          "skill_proficiency": {
+            "Debugging": 10,
+            "System_Design": 5,
+            "Documentation": 4
+          },
+          "flight_risk_probability": 0.11
+        }
+      },
+      {
+        "name": "Pooja",
+        "role": "HR Recruiter",
+        "kpi_score": 104,
+        "manager_notes": "Overwhelmed by dual workload; stress, late escalations, and process bottleneck",
+        "promoted": true,
+        "reason": "Pooja has been a powerhouse this quarter, exceeding her hiring targets by 13%. She took the initiative to set up a new automated scheduling tool that has saved the entire department approximately 10 hours a week in administrative work. This combination of high-volume output and process innovation proves she is ready for a Senior Recruiter role with a focus on HR Operations. She is a clear leader in efficiency and quality of hire.",
+        "ai_analytics": {
+          "sentiment_score": 0.34,
+          "retention_risk_level": "Low",
+          "potential_rating": 9,
+          "collaboration_index": 0.58,
+          "skill_proficiency": {
+            "Process_Automation": 9,
+            "Hiring_Volume": 10,
+            "Organization": 9
+          },
+          "flight_risk_probability": 0.55
+        }
+      },
+      {
+        "name": "Nikhil",
+        "role": "Sales",
+        "kpi_score": 92,
+        "manager_notes": "Needs improved closing consistency",
+        "promoted": false,
+        "reason": "Nikhil is highly regarded for his collaborative nature, but his individual closing consistency has been erratic this quarter. He often starts the month with a strong pipeline but fails to push deals across the finish line in the final week of the cycle. Until he can demonstrate a balanced, full-month performance and hit his individual quota consistently without manager intervention, he will not be considered for a senior role. We will focus on his closing techniques in Q2.",
+        "ai_analytics": {
+          "sentiment_score": 0.7,
+          "retention_risk_level": "Medium",
+          "potential_rating": 7,
+          "collaboration_index": 0.94,
+          "skill_proficiency": {
+            "Teamwork": 10,
+            "Closing_Consistency": 5,
+            "Prospecting": 7
+          },
+          "flight_risk_probability": 0.22
+        }
+      },
+      {
+        "name": "Sneha",
+        "role": "Developer",
+        "kpi_score": 115,
+        "manager_notes": "Mentors juniors effectively",
+        "promoted": true,
+        "reason": "Sneha has exceeded all technical benchmarks, but it is her leadership that truly sets her apart. She has spent over 20% of her time pair-programming with junior developers, which has directly resulted in a measurable increase in the team's overall velocity. Her ability to deliver high-quality code while simultaneously upskilling the entire department makes her a natural choice for a Lead Developer position. She is the 'force multiplier' the team needs.",
+        "ai_analytics": {
+          "sentiment_score": 0.95,
+          "retention_risk_level": "Low",
+          "potential_rating": 10,
+          "collaboration_index": 0.98,
+          "skill_proficiency": {
+            "Mentorship": 10,
+            "Code_Quality": 9,
+            "Velocity": 10
+          },
+          "flight_risk_probability": 0.03
+        }
+      },
+      {
+        "name": "Manav",
+        "role": "HR Recruiter",
+        "kpi_score": 94,
+        "manager_notes": "Could improve diversity sourcing mix",
+        "promoted": false,
+        "reason": "Manav is a reliable coordinator who keeps the hiring process moving smoothly. However, to move to the next level, he needs to show more 'Consultative' skills. Currently, his candidate pools lack the diversity mix the company is striving for. We want to see him challenge hiring manager requirements and proactively source from underrepresented groups. He will remain at his current level to work specifically on his diversity sourcing strategy for the next six months.",
+        "ai_analytics": {
+          "sentiment_score": 0.75,
+          "retention_risk_level": "Low",
+          "potential_rating": 7,
+          "collaboration_index": 0.85,
+          "skill_proficiency": {
+            "Coordination": 9,
+            "DEI_Sourcing": 4,
+            "Compliance": 9
+          },
+          "flight_risk_probability": 0.14
+        }
+      }
+    ]
+  },
+  {
+    "quarter": "Q1",
+    "manager_name": "Sarah Jenkins",
+    "team": [
+      {
+        "name": "Aditi",
+        "role": "Sales",
+        "kpi_score": 105,
+        "manager_notes": "Needs tighter forecasting accuracy",
+        "promoted": false,
+        "reason": "Aditi’s presentation skills are top-notch, often winning over skeptical clients. However, her end-of-quarter forecasts were off by 15%, which created significant budgeting issues for the operations team. In enterprise sales, accuracy in prediction is just as important as the sale itself. We are keeping her in her current role to work with the finance team on improving her forecasting models and ensuring her pipeline data is updated more accurately in real-time.",
+        "ai_analytics": {
+          "sentiment_score": 0.71,
+          "retention_risk_level": "Low",
+          "potential_rating": 8,
+          "collaboration_index": 0.76,
+          "skill_proficiency": {
+            "Presentations": 10,
+            "Forecasting": 4,
+            "Strategic_Selling": 7
+          },
+          "flight_risk_probability": 0.11
+        }
+      },
+      {
+        "name": "Farhan",
+        "role": "Developer",
+        "kpi_score": 89,
+        "manager_notes": "Needs to reduce reopened defects",
+        "promoted": false,
+        "reason": "Farhan is a fast coder, but often at the expense of stability. Over 15% of his tickets were reopened by the QA team this quarter due to regression bugs that should have been caught during local testing. This 'rework' creates more work for the rest of the team and slows down our release velocity. Until he can show a sustained period of 'clean' releases with a defect rate under 5%, he will not be considered for a senior role where technical oversight is required.",
+        "ai_analytics": {
+          "sentiment_score": 0.52,
+          "retention_risk_level": "High",
+          "potential_rating": 6,
+          "collaboration_index": 0.7,
+          "skill_proficiency": {
+            "Speed": 9,
+            "QA_Awareness": 3,
+            "Debugging": 7
+          },
+          "flight_risk_probability": 0.42
+        }
+      },
+      {
+        "name": "Lavanya",
+        "role": "HR Recruiter",
+        "kpi_score": 98,
+        "manager_notes": "Should improve offer negotiation outcomes",
+        "promoted": false,
+        "reason": "Lavanya follows all hiring protocols perfectly and has a very high quality of hire. However, she struggles to close top-tier candidates when they are faced with multiple competing offers. Her 'offer-to-accept' ratio is below the departmental target. We need her to work on her negotiation and persuasion tactics to secure the 'hard-to-get' talent. She will remain at her current level while we provide mentorship on high-level executive search closing techniques.",
+        "ai_analytics": {
+          "sentiment_score": 0.74,
+          "retention_risk_level": "Low",
+          "potential_rating": 7,
+          "collaboration_index": 0.82,
+          "skill_proficiency": {
+            "Compliance": 10,
+            "Negotiation": 5,
+            "Candidate_Vetting": 9
+          },
+          "flight_risk_probability": 0.13
+        }
+      },
+      {
+        "name": "Gaurav",
+        "role": "Sales",
+        "kpi_score": 82,
+        "manager_notes": "Needs stronger lead qualification",
+        "promoted": false,
+        "reason": "Gaurav’s KPI of 82% is below the required performance level for this quarter. His main struggle is 'time-wasters'—he spends too much effort on prospects that do not have the budget or authority to buy. He needs to implement a much stricter qualification framework to ensure he is only spending his time on high-value opportunities. Promotion is not on the table until he hits his base quota for two consecutive quarters and demonstrates better time management.",
+        "ai_analytics": {
+          "sentiment_score": 0.48,
+          "retention_risk_level": "High",
+          "potential_rating": 5,
+          "collaboration_index": 0.68,
+          "skill_proficiency": {
+            "Empathy": 9,
+            "Lead_Qualification": 3,
+            "Volume": 6
+          },
+          "flight_risk_probability": 0.48
+        }
+      },
+      {
+        "name": "Tanvi",
+        "role": "Developer",
+        "kpi_score": 108,
+        "manager_notes": "Should improve cross-team communication",
+        "promoted": false,
+        "reason": "Tanvi is a brilliant individual contributor who delivered a very complex feature this quarter ahead of schedule. However, she often works in a silo and rarely communicates with the Product or Design teams, which led to a few 'misaligned' components that had to be fixed at the last minute. She needs to show she can be a collaborative partner across departments and lead cross-functional syncs before moving to a Lead role where such communication is vital.",
+        "ai_analytics": {
+          "sentiment_score": 0.7,
+          "retention_risk_level": "Medium",
+          "potential_rating": 9,
+          "collaboration_index": 0.45,
+          "skill_proficiency": {
+            "Technical_Solving": 10,
+            "Cross-team_Comms": 3,
+            "Independence": 9
+          },
+          "flight_risk_probability": 0.21
+        }
+      },
+      {
+        "name": "Yash",
+        "role": "HR Recruiter",
+        "kpi_score": 90,
+        "manager_notes": "Needs better hiring manager feedback loops",
+        "promoted": false,
+        "reason": "Yash is great at interview scheduling and initial logistics, but he fails to follow up with hiring managers to see if the interviews were actually successful or if the job descriptions need adjusting. This lack of loop-closing prevents him from reaching a Lead Recruiter status where strategic partnership is key. He needs to move beyond simple coordination and start providing consultative feedback to our leadership team regarding the current talent market landscape.",
+        "ai_analytics": {
+          "sentiment_score": 0.69,
+          "retention_risk_level": "Low",
+          "potential_rating": 6,
+          "collaboration_index": 0.75,
+          "skill_proficiency": {
+            "Logistics": 9,
+            "Consultation": 4,
+            "Feedback_Loop": 3
+          },
+          "flight_risk_probability": 0.18
+        }
+      }
+    ]
+  },
+  {
+    "quarter": "Q1",
+    "manager_name": "David O'Loghlen",
+    "team": [
+      {
+        "name": "Kritika",
+        "role": "Sales",
+        "kpi_score": 114,
+        "manager_notes": "Should improve post-sale documentation",
+        "promoted": true,
+        "reason": "Kritika has one of the highest conversion rates in the history of the enterprise team. She has a unique ability to turn 'cold' prospects into 'warm' advocates through persistent and strategic follow-up. While her post-sale documentation is sometimes a bit disorganized, her revenue impact is so significant that it outweighs these minor administrative hurdles. She is promoted to Senior Account Executive to focus on our top 10% highest-value accounts in the next year.",
+        "ai_analytics": {
+          "sentiment_score": 0.86,
+          "retention_risk_level": "Low",
+          "potential_rating": 10,
+          "collaboration_index": 0.65,
+          "skill_proficiency": {
+            "Conversion": 10,
+            "Follow-up": 10,
+            "Admin": 4
+          },
+          "flight_risk_probability": 0.06
+        }
+      },
+      {
+        "name": "Abhishek",
+        "role": "Developer",
+        "kpi_score": 93,
+        "manager_notes": "Needs to improve release readiness checks",
+        "promoted": false,
+        "reason": "Abhishek is a steady developer, but he has been lax with our 'Production Release' protocols lately. He missed two key security scan steps in the last release cycle, which were luckily caught by the lead. On a team that handles special, high-security projects, these oversights are critical. He will remain at his current level until he can demonstrate 100% compliance with our security and deployment checklists for three consecutive release cycles without any manager oversight.",
+        "ai_analytics": {
+          "sentiment_score": 0.62,
+          "retention_risk_level": "Low",
+          "potential_rating": 7,
+          "collaboration_index": 0.8,
+          "skill_proficiency": {
+            "Reliability": 8,
+            "Security_Protocol": 3,
+            "DevOps": 6
+          },
+          "flight_risk_probability": 0.12
+        }
+      },
+      {
+        "name": "Rekha",
+        "role": "HR Recruiter",
+        "kpi_score": 85,
+        "manager_notes": "Needs higher sourcing volume and quality",
+        "promoted": false,
+        "reason": "Rekha struggled this quarter to find candidates with the specialized security clearances we need for Special Projects. Her sourcing volume was the lowest in the group, and many of her candidates were rejected at the initial resume screen due to lack of core skills. She needs to broaden her sourcing channels and perhaps attend specialized networking events to find the 'hidden' talent required for this team before we can discuss further career advancement.",
+        "ai_analytics": {
+          "sentiment_score": 0.44,
+          "retention_risk_level": "High",
+          "potential_rating": 5,
+          "collaboration_index": 0.6,
+          "skill_proficiency": {
+            "Empathy": 9,
+            "Technical_Vetting": 3,
+            "Sourcing_Volume": 3
+          },
+          "flight_risk_probability": 0.52
+        }
+      },
+      {
+        "name": "Harsh",
+        "role": "Sales",
+        "kpi_score": 100,
+        "manager_notes": "Should improve strategic account planning",
+        "promoted": false,
+        "reason": "Harsh hit his 100% target exactly, which is solid performance. However, he hasn't shown the 'above and beyond' effort required for a promotion in this competitive tier. He tends to take the path of least resistance with smaller accounts rather than building long-term strategic plans for larger ones that require multiple stakeholder buy-ins. We want to see him land at least one major strategic account and present a 12-month growth plan for it before moving him to a Senior role.",
+        "ai_analytics": {
+          "sentiment_score": 0.7,
+          "retention_risk_level": "Low",
+          "potential_rating": 7,
+          "collaboration_index": 0.72,
+          "skill_proficiency": {
+            "Consistency": 9,
+            "Strategic_Planning": 4,
+            "Stakeholder_Engagement": 6
+          },
+          "flight_risk_probability": 0.14
+        }
+      },
+      {
+        "name": "Diya",
+        "role": "Developer",
+        "kpi_score": 111,
+        "manager_notes": "Could enhance architecture communication",
+        "promoted": true,
+        "reason": "Diya is the technical engine of this team. She successfully navigated the migration of our legacy database to the cloud with virtually zero downtime, a task many thought would take twice as long. While she is quiet and could improve how she explains her architectural decisions to non-technical stakeholders, her choices are consistently correct and forward-thinking. Her promotion to Senior Software Engineer is a recognition of her status as one of our most gifted technical minds.",
+        "ai_analytics": {
+          "sentiment_score": 0.89,
+          "retention_risk_level": "Low",
+          "potential_rating": 10,
+          "collaboration_index": 0.65,
+          "skill_proficiency": {
+            "Cloud_Migration": 10,
+            "Technical_Correctness": 10,
+            "Architecture": 9
+          },
+          "flight_risk_probability": 0.05
+        }
+      },
+      {
+        "name": "Mohan",
+        "role": "HR Recruiter",
+        "kpi_score": 107,
+        "manager_notes": "Needs better monthly reporting clarity",
+        "promoted": false,
+        "reason": "Mohan is excellent at finding niche technical talent for our R&D wing and hit 107% of his target. However, his monthly reports are so disorganized that it is difficult for leadership to track his budget spend and ROI on various job boards. He is doing the 'work' of a senior recruiter, but his professional documentation is lacking the polish required for high-level leadership. We will review his promotion again in Q2 if his reporting becomes more professional and clear for the executive team.",
+        "ai_analytics": {
+          "sentiment_score": 0.76,
+          "retention_risk_level": "Low",
+          "potential_rating": 8,
+          "collaboration_index": 0.8,
+          "skill_proficiency": {
+            "Niche_Sourcing": 9,
+            "Reporting": 3,
+            "Execution": 9
+          },
+          "flight_risk_probability": 0.09
+        }
+      }
+    ]
+  }
+]

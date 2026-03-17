@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quarterly Upload</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">HR Agentic Suite</p>
+        <h1>Upload 4 Quarterly JSON Reports</h1>
+        <p id="yearProgressBadge" class="metric-label" style="margin-top:6px;">2025 Progress: Q1✗ Q2✗ Q3✗ Q4✗</p>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center;">
+        <button id="continueBtn" class="btn-primary" type="button">Continue to App</button>
+        <button id="logoutBtn" class="btn-ghost" type="button">Logout</button>
+      </div>
+    </header>
+
+    <section class="workspace">
+      <div class="panel input-panel">
+        <h2>Quarter Files</h2>
+        <form id="uploadForm">
+          <label>Year
+            <select id="yearSelect" required>
+              <option value="2025">2025</option>
+            </select>
+          </label>
+          <label>Q1 JSON <input id="q1File" type="file" accept=".json,application/json" /></label>
+          <label>Q2 JSON <input id="q2File" type="file" accept=".json,application/json" /></label>
+          <label>Q3 JSON <input id="q3File" type="file" accept=".json,application/json" /></label>
+          <label>Q4 JSON <input id="q4File" type="file" accept=".json,application/json" /></label>
+          <button class="btn-primary" type="submit">Upload Selected Files for 2025</button>
+        </form>
+      </div>
+
+      <div class="panel output-panel">
+        <h2>Upload Status</h2>
+        <pre id="uploadStatus" class="status-box upload-status-box">Please upload all 4 quarterly JSON files.</pre>
+        <h2 style="margin-top:12px;">Expected JSON Structure (Example)</h2>
+        <pre class="mini-pre">{
+  "quarter": "Q1",
+  "managers": [
+    {
+      "manager_name": "Aravind Swamy",
+      "employees": [
+        {
+          "employee_name": "Aman",
+          "role": "Sales",
+          "kpi_score": "110% target achieved",
+          "peer_feedback": "Strong client relationships and proactive follow-through.",
+          "manager_notes": "Needs better reporting cadence.",
+          "promoted": false,
+          "reason": "Promotion deferred pending process discipline improvement.",
+          "ai_analytics": {
+            "sentiment_score": 0.65,
+            "collaboration_index": 0.72,
+            "flight_risk_probability": 0.18,
+            "potential_rating": 8,
+            "skill_proficiency": {
+              "Negotiation": 9,
+              "CRM_Admin": 4,
+              "Strategy": 6
+            }
+          }
+        }
+      ]
+    }
+  ]
+}</pre>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <div class="panel output-panel">
+        <h2>Current Stored Files</h2>
+        <div id="filesList"></div>
+      </div>
+    </section>
+  </main>
+  <script src="upload.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HR Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell auth-shell">
+    <header class="topbar auth-topbar">
+      <div>
+        <p class="eyebrow">HR Agentic Suite</p>
+        <h1>Login / Signup</h1>
+      </div>
+    </header>
+
+    <section class="panel auth-card">
+      <div class="auth-toggle">
+        <button type="button" id="showLoginBtn" class="btn-ghost">Login</button>
+        <button type="button" id="showSignupBtn" class="btn-ghost">Signup</button>
+        <button type="button" id="googleAuthBtn" class="btn-ghost">Login/Signup with Google</button>
+      </div>
+
+      <form id="loginForm" class="auth-form">
+        <label>Email <input id="loginEmail" type="email" required /></label>
+        <label>Password <input id="loginPassword" type="password" required /></label>
+        <div class="actions">
+          <button type="button" id="forgotPasswordBtn" class="btn-ghost">Forgot Password?</button>
+        </div>
+        <button class="btn-primary" type="submit">Login</button>
+      </form>
+
+      <form id="signupForm" class="auth-form" style="display:none;">
+        <label>Name <input id="signupName" type="text" required /></label>
+        <label>Email <input id="signupEmail" type="email" required /></label>
+        <label>Password <input id="signupPassword" type="password" minlength="6" required /></label>
+        <button class="btn-primary" type="submit">Create Account</button>
+      </form>
+
+      <form id="resetForm" class="auth-form" style="display:none;">
+        <label>Email <input id="resetEmail" type="email" required readonly /></label>
+        <label>New Password <input id="resetPassword" type="password" minlength="6" required /></label>
+        <button class="btn-primary" type="submit">Reset Password</button>
+      </form>
+
+      <pre id="authStatus" class="status-box">Enter details to login or sign up.</pre>
+
+      <div class="auth-guest-row">
+        <button id="guestBtn" class="btn-ghost" type="button">Login as Guest</button>
+        <span class="guest-meta">For demo</span>
+      </div>
+    </section>
+  </main>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="auth.js"></script>
+</body>
+</html>

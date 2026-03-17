@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workload Rebalancing Agent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-shape shape-a"></div>
+  <div class="bg-shape shape-b"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">HR Agentic Suite</p>
+        <h1>Workload Rebalancing & Impact Simulation</h1>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center;">
+        <button id="backBtn" class="btn-ghost" type="button">Back to Dashboard</button>
+        <button id="logoutBtn" class="btn-ghost" type="button">Logout</button>
+      </div>
+    </header>
+
+    <section class="workspace">
+      <div class="panel input-panel">
+        <h2>Simulation Inputs</h2>
+        <div class="workload-inputs">
+          <label>Manager
+            <select id="managerInput">
+              <option value="">Select manager</option>
+            </select>
+          </label>
+          <label>Employee
+            <select id="employeeInput">
+              <option value="">Select employee</option>
+            </select>
+          </label>
+          <div class="actions">
+            <button type="button" id="analyzeWorkloadBtn" class="btn-primary">Analyze Workload for the employee</button>
+          </div>
+        </div>
+      </div>
+      <div class="panel output-panel">
+        <h2>Status</h2>
+        <pre id="statusBox">Ready.</pre>
+      </div>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="panel dashboard-card">
+        <h2>Visual Data Package</h2>
+        <div class="workload-visual-grid">
+          <div class="chart-card">
+            <h3>Risk Quadrant</h3>
+            <div id="riskQuadrant" class="quadrant-box">Run analysis to render.</div>
+            <p class="graph-explain">Positions performance (KPI) vs resilience (SRS) on a 2x2 plane. Top-right indicates sustainable output, while high KPI with low SRS indicates burnout-prone productivity.</p>
+          </div>
+          <div class="chart-card">
+            <h3>Scissors Trend (KPI vs SRS)</h3>
+            <svg id="scissorsSvg" class="trend-svg" viewBox="0 0 320 140" aria-label="Scissors Trend"></svg>
+            <div class="trend-legend">
+              <span class="legend-item"><i class="legend-line legend-kpi"></i>KPI</span>
+              <span class="legend-item"><i class="legend-line legend-srs"></i>SRS</span>
+            </div>
+            <div class="insight-content" id="scissorsAnnotation">No trend annotation yet.</div>
+            <p class="graph-explain">Compares output velocity against resilience battery quarter-by-quarter. Divergence where KPI rises but SRS falls confirms unsustainable pacing and imminent load-rebalancing need.</p>
+          </div>
+          <div class="chart-card">
+            <h3>Manager Calibration Dial</h3>
+            <div id="calibrationDial" class="calibration-dial">
+              <div class="dial-value">0%</div>
+              <div class="dial-label">No calibration data</div>
+            </div>
+            <p class="graph-explain">Shows alignment percentage between managerial narrative and AI exhaustion signals. Lower scores indicate managerial blindspots and elevated decision-risk in performance evaluation.</p>
+          </div>
+          <div class="chart-card">
+            <h3>Team Heatmap (Skill vs SRS)</h3>
+            <svg id="teamHeatmapSvg" class="trend-svg" viewBox="0 0 320 160" aria-label="Team Heatmap"></svg>
+            <p class="graph-explain">Maps team capability against resilience to identify safe receivers and fragile specialists. High-skill low-SRS points are bottlenecks; high-SRS moderate-skill points are offload candidates.</p>
+          </div>
+          <div class="chart-card">
+            <h3>Workload Flow (Sankey View)</h3>
+            <div id="workloadFlowBlock" class="matrix-wrap">No flow data yet.</div>
+            <p class="graph-explain">Represents transfer percentages from sender to peers/contractors as weighted flow. It validates whether relief is internally absorbable or must route to external capacity.</p>
+          </div>
+          <div class="chart-card">
+            <h3>Match Radar (Sender vs Peer)</h3>
+            <svg id="matchRadarSvg" class="trend-svg" viewBox="0 0 320 180" aria-label="Match Radar"></svg>
+            <p class="graph-explain">Compares sender vs receiver across resilience, skill, sentiment, and collaboration dimensions. Wider receiver envelope indicates safer delegation with lower cascade-burnout probability.</p>
+          </div>
+          <div class="chart-card">
+            <h3>Capacity Stack</h3>
+            <div class="actions">
+              <button type="button" id="openCapacityStackBtn" class="btn-ghost">View Capacity Stack</button>
+            </div>
+            <div class="insight-content">Open dialog to inspect peer load split and remaining buffer.</div>
+            <p class="graph-explain">Breaks each peer into internal load, absorbed load, and remaining buffer. It enforces anti-overload constraints before approving any additional delegation.</p>
+          </div>
+        </div>
+      </article>
+      <article class="panel dashboard-card">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;">
+          <h2 style="margin:0;">Compatibility Matches</h2>
+          <button type="button" id="openPeerGaugeBtn" class="btn-ghost">Peer Capacity Gauge</button>
+        </div>
+        <p class="graph-explain">Peer battery levels are derived from SRS as percentage capacity. Green indicates safe absorption, yellow indicates caution, and red blocks delegation to prevent burnout cascades.</p>
+        <div id="peersTable" class="matrix-wrap">No simulation yet.</div>
+        <h2 id="matchExplainTitle">Why This Peer Was Picked</h2>
+        <pre class="mini-pre" id="matchExplainBlock">No simulation yet.</pre>
+        <h2>Assignments / Conflict Alert</h2>
+        <pre class="mini-pre" id="assignmentBlock">No simulation yet.</pre>
+      </article>
+    </section>
+  </main>
+
+  <dialog id="peerGaugeDialog" class="gauge-dialog">
+    <div class="gauge-dialog-head">
+      <h3>Peer Capacity Gauge</h3>
+      <button type="button" id="closePeerGaugeBtn" class="btn-ghost">Close</button>
+    </div>
+    <div id="peerGaugeDialogBody" class="matrix-wrap">Run workload analysis to view peer batteries.</div>
+  </dialog>
+  <dialog id="capacityStackDialog" class="gauge-dialog">
+    <div class="gauge-dialog-head">
+      <h3>Capacity Stack</h3>
+      <button type="button" id="closeCapacityStackBtn" class="btn-ghost">Close</button>
+    </div>
+    <div id="capacityStackDialogBody" class="matrix-wrap">Run workload analysis to view capacity stack.</div>
+  </dialog>
+  <dialog id="graphZoomDialog" class="gauge-dialog graph-zoom-dialog">
+    <div class="gauge-dialog-head">
+      <h3 id="graphZoomTitle">Graph Zoom</h3>
+      <div class="actions">
+        <button type="button" id="zoomOutBtn" class="btn-ghost">-</button>
+        <button type="button" id="zoomResetBtn" class="btn-ghost">Reset</button>
+        <button type="button" id="zoomInBtn" class="btn-ghost">+</button>
+        <button type="button" id="closeGraphZoomBtn" class="btn-ghost">Close</button>
+      </div>
+    </div>
+    <div id="graphZoomViewport" class="graph-zoom-viewport">
+      <div id="graphZoomBody" class="graph-zoom-body"></div>
+    </div>
+  </dialog>
+  <script src="workload.js"></script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Performance Review Console</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-shape shape-a"></div>
+  <div class="bg-shape shape-b"></div>
+
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">HR Agentic Suite</p>
+        <h1>Performance Review Writer + Bias Checker</h1>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center;">
+        <div class="chip">Dark Mode</div>
+        <button id="manageReportsBtn" class="btn-ghost" type="button">Manage Reports</button>
+        <button id="logoutBtn" class="btn-ghost" type="button">Logout</button>
+      </div>
+    </header>
+
+    <section class="kpi-strip" aria-label="System Metrics">
+      <article class="metric-card">
+        <p class="metric-label">Managers Loaded</p>
+        <p class="metric-value" id="managersCount">0</p>
+      </article>
+      <article class="metric-card">
+        <p class="metric-label">Employees Loaded</p>
+        <p class="metric-value" id="employeesCount">30</p>
+      </article>
+      <article class="metric-card">
+        <p class="metric-label">Bias Flags Detected</p>
+        <p class="metric-value" id="flagsCount">0</p>
+      </article>
+      <article class="metric-card">
+        <p class="metric-label">LLM Mode</p>
+        <p class="metric-value" id="llmMode">-</p>
+      </article>
+    </section>
+
+    <section class="workspace">
+      <div class="panel input-panel">
+        <h2>Selection Criteria</h2>
+        <form>
+          <label>
+            Manager <span style="color:#ff9aa5;">*</span>
+            <select id="managerSelect" required>
+              <option value="">Select manager</option>
+            </select>
+          </label>
+
+          <label>
+            Employee <span style="color:#ff9aa5;">*</span>
+            <select id="employeeSelect" required disabled>
+              <option value="">Select manager first</option>
+            </select>
+          </label>
+
+          <div class="actions">
+            <button type="button" id="analyzeBtn" class="btn-primary">Analyze Performance Report</button>
+            <button type="button" id="workloadBtn" class="btn-ghost">Analyze Workload across teams</button>
+          </div>
+        </form>
+      </div>
+      <div class="panel output-panel">
+        <h2>Analysis Status</h2>
+        <pre id="statusBox">Select both Manager and Employee to begin analysis.</pre>
+      </div>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="panel dashboard-card">
+        <div class="card-header">
+          <div class="avatar" id="employeeAvatar">--</div>
+          <div>
+            <h2>Employee Annual Analysis (LLM)</h2>
+            <p class="card-subtitle" id="employeeIdentity">Select manager and employee to load analytics.</p>
+          </div>
+        </div>
+
+        <div class="chart-row">
+          <div class="chart-card">
+            <h3>KPI Across Quarters</h3>
+            <div class="bar-chart" id="kpiBarChart"></div>
+            <p class="graph-explain">Uses quarterly KPI trajectory to quantify delivery momentum and output consistency. Rising bars indicate stronger execution; flat/declining bars indicate delivery risk or stalled growth.</p>
+          </div>
+          <div class="chart-card">
+            <h3>Sentiment + Collaboration</h3>
+            <svg id="trendSvg" class="trend-svg" viewBox="0 0 320 140" aria-label="Sentiment and Collaboration trend"></svg>
+            <p class="graph-explain">Plots emotional health and team integration over time. If sentiment falls while collaboration or output remains high, it signals hidden strain and potential burnout risk.</p>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <h3>Advanced Visual Analytics</h3>
+          <div class="workload-visual-grid">
+          <div class="chart-card">
+            <h3>Scissors Area</h3>
+            <svg id="scissorsAreaSvg" class="trend-svg" viewBox="0 0 320 150" aria-label="Scissors Area"></svg>
+            <p class="graph-explain">Compares productivity (KPI area) against wellness proxy (sentiment line). A widening gap mathematically indicates the Scissors Effect: output sustained at increasing personal cost.</p>
+          </div>
+            <div class="chart-card">
+              <h3>Skill Web</h3>
+              <svg id="skillWebSvg" class="trend-svg" viewBox="0 0 320 190" aria-label="Skill Web"></svg>
+              <p class="graph-explain">Maps multi-dimensional capability against role benchmark targets. Outward spread above benchmark suggests readiness for scope expansion; concentrated deficits indicate targeted development needs.</p>
+            </div>
+            <div class="chart-card">
+              <h3>Bias Distribution</h3>
+              <svg id="biasDistributionSvg" class="trend-svg" viewBox="0 0 320 140" aria-label="Bias Distribution"></svg>
+              <p class="graph-explain">Uses median and interquartile range to calibrate manager behavior against company norms. Large anomaly distance from the distribution center indicates stricter or lenient evaluation bias.</p>
+            </div>
+            <div class="chart-card">
+            <h3>Collaboration Chord</h3>
+            <svg id="collabChordSvg" class="trend-svg" viewBox="0 0 320 170" aria-label="Collaboration Chord"></svg>
+            <p class="graph-explain">Shows dependency intensity across peer and management links. High-load red/orange ribbons reveal work siphon, conflict zones, or management shadowing patterns.</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="insight-block">
+          <h3>Employee Overview</h3>
+          <div class="insight-content" id="employeeOverviewBlock">No data yet.</div>
+        </div>
+        <div class="insight-block">
+          <h3>Skill Trends</h3>
+          <div class="insight-content" id="skillTrendsBlock">No data yet.</div>
+        </div>
+        <div class="insight-block">
+          <h3>Manager Take</h3>
+          <div class="insight-content" id="managerTakeBlock">No data yet.</div>
+        </div>
+        <div class="insight-block">
+          <h3>Probable Future Trajectory</h3>
+          <div class="insight-content" id="trajectoryBlock">No data yet.</div>
+        </div>
+        <div class="insight-block">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;">
+            <h3 style="margin:0;">Risk/Success Matrix</h3>
+            <button type="button" id="openRiskMatrixBtn" class="btn-ghost">View Matrix Table</button>
+          </div>
+          <div id="riskMatrixBlock" class="insight-content">No data yet.</div>
+        </div>
+      </article>
+
+      <article class="panel dashboard-card">
+        <h2>Manager Pattern + Bias Report (LLM + Rules)</h2>
+        <div class="insight-block">
+          <h3>Manager Promotion Pattern</h3>
+          <div class="insight-content" id="managerPatternBlock">No data yet.</div>
+        </div>
+        <div class="insight-block">
+          <h3>Manager Biasness Report</h3>
+          <div class="insight-content" id="managerBiasBlock">No data yet.</div>
+        </div>
+
+        <div class="chart-card">
+          <h3>Manager Calibration Summary</h3>
+          <div class="stack-bars" id="managerCalibrationChart"></div>
+          <pre class="mini-pre" id="managerCalibrationText">No data yet.</pre>
+        </div>
+
+        <div class="alert-card">
+          <h3>Predictive Signals Snapshot</h3>
+          <div class="insight-content" id="predictiveSignalsBlock">No data yet.</div>
+        </div>
+
+        <div class="chart-card">
+          <h3>Longitudinal Velocity</h3>
+          <div class="workload-visual-grid">
+            <div class="chart-card">
+              <h3>Burnout Velocity (Phase Plane)</h3>
+              <svg id="longitudinalPhaseSvg" class="trend-svg" viewBox="0 0 320 170" aria-label="Burnout velocity phase plane"></svg>
+              <p class="graph-explain">Tracks the Q3 to Q4 vector in KPI-sentiment space. A top-left movement (KPI up, sentiment down) mathematically signals a terminal burnout slope.</p>
+            </div>
+            <div class="chart-card">
+              <h3>Skill Stagnation Overflow</h3>
+              <div id="skillSurplusBullet" class="longitudinal-bullet">No data yet.</div>
+              <p class="graph-explain">Compares actual skill against role ceiling using surplus overflow. Persistent overflow implies promotion ceiling risk and likely silent attrition from under-utilization.</p>
+            </div>
+            <div class="chart-card">
+              <h3>Calibration Disconnect (X-Cross)</h3>
+              <svg id="calibrationXSvg" class="trend-svg" viewBox="0 0 320 170" aria-label="Calibration disconnect slope graph"></svg>
+              <p class="graph-explain">Measures slope divergence between manager positivity and AI sentiment trend. An X-cross indicates managerial disconnect: narrative improving while employee reality declines.</p>
+            </div>
+            <div class="chart-card">
+              <h3>Blast Radius (Dependency Map)</h3>
+              <svg id="blastRadiusSvg" class="trend-svg" viewBox="0 0 320 190" aria-label="Blast radius dependency map"></svg>
+              <p class="graph-explain">Models strategic exit risk via dependency concentration around the selected employee. Larger central halo and high-risk peer nodes indicate broader productivity shock if attrition occurs.</p>
+            </div>
+          </div>
+          <div class="insight-content" id="longitudinalSummary">No data yet.</div>
+        </div>
+
+        <div class="chart-card">
+          <h3>Internal AI Audit</h3>
+          <div class="actions" style="margin-bottom:8px;">
+            <button type="button" id="generateAuditBtn" class="btn-ghost" style="display:none;">Generate AI Audit Report</button>
+          </div>
+          <div class="mini-pre" id="internalInvestigationBlock">Run analysis to generate investigation insights.</div>
+        </div>
+
+        <div class="success-card">
+          <h3>2027 Strategic Recommendation</h3>
+          <div class="insight-content" id="recommendationBlock">No data yet.</div>
+          <div class="insight-content" id="riskActionStatus" style="margin-top:8px;">No risk status yet.</div>
+          <div class="actions" id="interventionActions" style="margin-top:10px; display:none;">
+            <button type="button" class="btn-primary" id="autoPilotInterventionBtn">Create Gmail Draft and Stay Interview Event</button>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <dialog id="dashboardGraphZoomDialog" class="gauge-dialog graph-zoom-dialog">
+    <div class="gauge-dialog-head">
+      <h3 id="dashboardGraphZoomTitle">Graph Zoom</h3>
+      <div class="actions">
+        <button type="button" id="dashboardZoomOutBtn" class="btn-ghost">-</button>
+        <button type="button" id="dashboardZoomResetBtn" class="btn-ghost">Reset</button>
+        <button type="button" id="dashboardZoomInBtn" class="btn-ghost">+</button>
+        <button type="button" id="dashboardCloseGraphZoomBtn" class="btn-ghost">Close</button>
+      </div>
+    </div>
+    <div id="dashboardGraphZoomViewport" class="graph-zoom-viewport">
+      <div id="dashboardGraphZoomBody" class="graph-zoom-body"></div>
+    </div>
+  </dialog>
+  <dialog id="riskMatrixDialog" class="gauge-dialog">
+    <div class="gauge-dialog-head">
+      <h3>Risk/Success Matrix</h3>
+      <button type="button" id="closeRiskMatrixBtn" class="btn-ghost">Close</button>
+    </div>
+    <div id="riskMatrixDialogBody" class="matrix-wrap">Run analysis to view matrix.</div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

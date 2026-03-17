@@ -1,0 +1,19 @@
+{
+  "name": "ai-performance-review-writer-bias-checker-agent",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Agentic HR performance review pipeline with dark-mode frontend",
+  "scripts": {
+    "start": "node src/hr_review_agent.js",
+    "start:llm": "node src/hr_review_agent.js --llm-only --employee Riya",
+    "start:local": "node src/hr_review_agent.js --local-only",
+    "app": "node scripts/app-server.js --port 5602",
+    "frontend": "node scripts/app-server.js --port 5602",
+    "frontend:5603": "node scripts/app-server.js --port 5603",
+    "frontend:static": "node scripts/serve-frontend.js --port 5601"
+  },
+  "dependencies": {
+    "mongodb": "^7.1.0",
+    "nodemailer": "^6.9.15"
+  }
+}

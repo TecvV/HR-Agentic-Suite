@@ -1,0 +1,632 @@
+[
+  {
+    "quarter": "Q3",
+    "manager_name": "Aravind Swamy",
+    "team": [
+      {
+        "name": "Aman",
+        "role": "Sales",
+        "kpi_score": 120,
+        "manager_notes": "Consistent elite performance; taking on more mentorship",
+        "promoted": false,
+        "reason": "Aman continues to dominate the sales leaderboard with a 120% KPI. Having been promoted in Q2, he is currently in a 'performance sustaining' phase where he is being tested for future leadership. He has successfully mentored two junior reps this quarter, both of whom saw a 10% increase in their own KPIs. While no promotion is slated for this quarter, he is being fast-tracked for a 'Team Lead' role in Q4 if he maintains this mentorship impact.",
+        "ai_analytics": {
+          "sentiment_score": 0.92,
+          "retention_risk_level": "Low",
+          "potential_rating": 10,
+          "collaboration_index": 0.88,
+          "skill_proficiency": {
+            "Negotiation": 10,
+            "CRM_Admin": 9,
+            "Mentorship": 8
+          },
+          "flight_risk_probability": 0.03
+        }
+      },
+      {
+        "name": "Riya",
+        "role": "Developer",
+        "kpi_score": 98,
+        "manager_notes": "Maintained high documentation standards despite heavy load",
+        "promoted": false,
+        "reason": "Riya has successfully stabilized in her Developer II role. This quarter, the focus was on high-velocity feature shipping for the Q3 release. Although her raw KPI dipped slightly from 101% to 98%, her 'Net Impact' was higher because she handled 15% more tickets than the previous quarter. She remains a vital pillar of the team’s reliability, and her documentation remains the company gold standard. We are keeping her at this level to build further technical depth.",
+        "ai_analytics": {
+          "sentiment_score": 0.85,
+          "retention_risk_level": "Low",
+          "potential_rating": 8,
+          "collaboration_index": 0.95,
+          "skill_proficiency": {
+            "Coding": 9,
+            "Documentation": 10,
+            "Architecture": 7
+          },
+          "flight_risk_probability": 0.06
+        }
+      },
+      {
+        "name": "Neha",
+        "role": "HR Recruiter",
+        "kpi_score": 110,
+        "manager_notes": "Strategic workforce planning is now her core strength",
+        "promoted": false,
+        "reason": "Since her promotion to Lead Recruiter in Q2, Neha has shifted her focus toward long-term workforce strategy. She delivered a comprehensive 2026 hiring forecast that has been integrated into the CFO’s annual budget plan. Her 110% KPI reflects her ability to manage both her regular desk and these high-level strategic projects. No further promotion is necessary at this stage as she is currently redefining the Lead Recruiter role's impact.",
+        "ai_analytics": {
+          "sentiment_score": 0.89,
+          "retention_risk_level": "Low",
+          "potential_rating": 9,
+          "collaboration_index": 0.92,
+          "skill_proficiency": {
+            "Sourcing": 8,
+            "Workforce_Planning": 10,
+            "Communication": 10
+          },
+          "flight_risk_probability": 0.05
+        }
+      },
+      {
+        "name": "Arjun",
+        "role": "Sales",
+        "kpi_score": 98,
+        "manager_notes": "Stress remains manageable but late opportunities show pipeline bottleneck",
+        "promoted": true,
+        "reason": "Arjun has finally delivered the 'balanced quarter' we asked for in Q2. He hit 102% of his target by maintaining a healthy top-of-funnel pipeline while simultaneously closing deals with the techniques he learned in Q1. This turnaround—from inconsistent prospector to a reliable closer—proves he has mastered the full sales lifecycle. His promotion to Senior Sales Executive is a reward for his persistence and his ability to self-correct based on consecutive quarters of feedback.",
+        "ai_analytics": {
+          "sentiment_score": 0.64,
+          "retention_risk_level": "Low",
+          "potential_rating": 7,
+          "collaboration_index": 0.78,
+          "skill_proficiency": {
+            "Networking": 9,
+            "Closing": 8,
+            "Pipeline_Mgmt": 8
+          },
+          "flight_risk_probability": 0.36
+        }
+      },
+      {
+        "name": "Priya",
+        "role": "Developer",
+        "kpi_score": 105,
+        "manager_notes": "Morale has stabilized; focus back on technical excellence",
+        "promoted": false,
+        "reason": "After some signs of fatigue in Q2, Priya took a structured break and returned with renewed focus. Her collaboration index has risen as she is now actively delegating smaller tasks and focusing her energy on the core platform's scalability. She successfully led the team through a high-pressure security audit this quarter. We are maintaining her at her current grade to allow her to continue her leadership transition without the pressure of a new title change yet.",
+        "ai_analytics": {
+          "sentiment_score": 0.78,
+          "retention_risk_level": "Low",
+          "potential_rating": 10,
+          "collaboration_index": 0.85,
+          "skill_proficiency": {
+            "Architecture": 10,
+            "Leadership": 9,
+            "Security_Compliance": 9
+          },
+          "flight_risk_probability": 0.1
+        }
+      },
+      {
+        "name": "Karan",
+        "role": "HR Recruiter",
+        "kpi_score": 98,
+        "manager_notes": "Sustaining efficiency while training others",
+        "promoted": false,
+        "reason": "Karan was promoted in Q2 and has spent Q3 teaching his 'AI Screening' frameworks to the rest of the department. While this internal training slightly lowered his raw individual hiring volume (98% KPI), the overall department's speed increased by 7% as a result of his efforts. This 'team-first' mentality is highly valued, and he is meeting all the expectations of his new Recruiter II grade. He remains a key contributor to our operational excellence.",
+        "ai_analytics": {
+          "sentiment_score": 0.84,
+          "retention_risk_level": "Low",
+          "potential_rating": 8,
+          "collaboration_index": 0.95,
+          "skill_proficiency": {
+            "Efficiency": 9,
+            "Training": 9,
+            "Systems_Thinking": 8
+          },
+          "flight_risk_probability": 0.08
+        }
+      }
+    ]
+  },
+  {
+    "quarter": "Q3",
+    "manager_name": "Elena Rodriguez",
+    "team": [
+      {
+        "name": "Sonia",
+        "role": "Sales",
+        "kpi_score": 110,
+        "manager_notes": "Ready for high-level leadership",
+        "promoted": true,
+        "reason": "Sonia has reached the ceiling of the Senior Account Executive role. After a year of 110%+ performance and a highly successful quarter leading the 'Sales Academy,' she has proven she can scale her skills through others. Her promotion to Sales Manager is the next logical step. She will now oversee a team of 4 junior reps while maintaining a small portfolio of 'Platinum' accounts. Her transition from player to coach is complete.",
+        "ai_analytics": {
+          "sentiment_score": 0.96,
+          "retention_risk_level": "Low",
+          "potential_rating": 10,
+          "collaboration_index": 0.98,
+          "skill_proficiency": {
+            "Enterprise_Sales": 10,
+            "Coaching": 10,
+            "Team_Management": 8
+          },
+          "flight_risk_probability": 0.02
+        }
+      },
+      {
+        "name": "Vikram",
+        "role": "Developer",
+        "kpi_score": 95,
+        "manager_notes": "Very reliable; solid Senior-level output",
+        "promoted": false,
+        "reason": "Vikram was promoted to Developer II in Q2 and has demonstrated that he belongs at this level. His estimation accuracy remains excellent, and he has taken full ownership of the payment gateway module. He successfully mitigated a major downtime risk this quarter by proactively identifying a race condition in the legacy code. He is a 'safe pair of hands' for the team, and we are giving him space to stabilize at this new grade before pushing for the next level.",
+        "ai_analytics": {
+          "sentiment_score": 0.81,
+          "retention_risk_level": "Low",
+          "potential_rating": 8,
+          "collaboration_index": 0.88,
+          "skill_proficiency": {
+            "Debugging": 10,
+            "Project_Estimation": 9,
+            "Risk_Mitigation": 9
+          },
+          "flight_risk_probability": 0.12
+        }
+      },
+      {
+        "name": "Meera",
+        "role": "HR Recruiter",
+        "kpi_score": 104,
+        "manager_notes": "Improved process consistency while balancing heavy req load",
+        "promoted": false,
+        "reason": "Meera continues to deliver strong results as a Senior Recruiter. The Q3 tech market became significantly tighter, yet she managed to fill all 12 of her high-priority engineering slots. Her ability to keep candidate sentiment high during long interview loops is a key asset. No further promotion is warranted this quarter as she just moved up in Q2, but she remains one of the most effective technical recruiters in the organization.",
+        "ai_analytics": {
+          "sentiment_score": 0.56,
+          "retention_risk_level": "Low",
+          "potential_rating": 9,
+          "collaboration_index": 0.64,
+          "skill_proficiency": {
+            "Stakeholder_Mgmt": 10,
+            "Resilience": 9,
+            "Candidate_Sentiment": 10
+          },
+          "flight_risk_probability": 0.35
+        }
+      },
+      {
+        "name": "Rahul",
+        "role": "Sales",
+        "kpi_score": 108,
+        "manager_notes": "Mastery of the mid-market segment",
+        "promoted": false,
+        "reason": "Rahul is thriving after his Q2 promotion. He has become the team’s top performer in the mid-market segment, consistently hitting 108% of his KPI. His objection handling is now so refined that he is often asked to join 'difficult' calls for other reps to help close them. He is providing excellent value at his current grade, and our goal for the rest of the year is to see him expand his skills into the enterprise-level territory planning.",
+        "ai_analytics": {
+          "sentiment_score": 0.88,
+          "retention_risk_level": "Low",
+          "potential_rating": 8,
+          "collaboration_index": 0.92,
+          "skill_proficiency": {
+            "Resilience": 10,
+            "Objection_Handling": 10,
+            "Mid-Market_Strategy": 9
+          },
+          "flight_risk_probability": 0.05
+        }
+      },
+      {
+        "name": "Anita",
+        "role": "Developer",
+        "kpi_score": 102,
+        "manager_notes": "Leading the 'Shift Left' QA culture",
+        "promoted": false,
+        "reason": "Anita was promoted to Senior Developer in Q2 and has already made a massive impact on the departmental culture. She is leading the 'Shift Left' initiative, moving testing earlier into the development cycle. This quarter, the team’s production defect rate hit an all-time low of 2%. While her individual coding output is at 102%, her value as a quality-standards leader is much higher. She is currently performing exactly at the high level expected of her new role.",
+        "ai_analytics": {
+          "sentiment_score": 0.83,
+          "retention_risk_level": "Low",
+          "potential_rating": 9,
+          "collaboration_index": 0.94,
+          "skill_proficiency": {
+            "Unit_Testing": 10,
+            "Quality_Standards": 10,
+            "Cultural_Leadership": 9
+          },
+          "flight_risk_probability": 0.07
+        }
+      },
+      {
+        "name": "Dev",
+        "role": "HR Recruiter",
+        "kpi_score": 104,
+        "manager_notes": "Confirmed the Q2 turnaround was real",
+        "promoted": true,
+        "reason": "Dev has successfully maintained the momentum we saw in Q2. He hit 104% of his target for two consecutive quarters using his new outbound sourcing strategy. More importantly, he has mentored two junior recruiters on how to use LinkedIn automation tools effectively. This combination of individual performance and team contribution confirms he is ready for the Recruiter II title. His conversion rates for passive candidates are now among the best in the team.",
+        "ai_analytics": {
+          "sentiment_score": 0.88,
+          "retention_risk_level": "Low",
+          "potential_rating": 8,
+          "collaboration_index": 0.85,
+          "skill_proficiency": {
+            "Candidate_Experience": 10,
+            "Outbound_Sourcing": 9,
+            "Persistence": 9
+          },
+          "flight_risk_probability": 0.04
+        }
+      }
+    ]
+  },
+  {
+    "quarter": "Q3",
+    "manager_name": "Marcus Chen",
+    "team": [
+      {
+        "name": "Ishita",
+        "role": "Sales",
+        "kpi_score": 115,
+        "manager_notes": "The most disciplined rep in the org",
+        "promoted": true,
+        "reason": "Ishita has been the company’s most consistent high-performer for three straight quarters. Her revenue numbers are always in the top 5%, and her CRM data is now the cleanest in Marcus's team. After a year of exceeding every metric and demonstrating perfect administrative hygiene, she is being promoted to Sales Team Lead. She will now be responsible for the development and quota achievement of the 'Enterprise Junior' pod while maintaining her own strategic accounts.",
+        "ai_analytics": {
+          "sentiment_score": 0.94,
+          "retention_risk_level": "Low",
+          "potential_rating": 10,
+          "collaboration_index": 0.8,
+          "skill_proficiency": {
+            "Upselling": 10,
+            "CRM_Data": 10,
+            "Sales_Strategy": 10
+          },
+          "flight_risk_probability": 0.02
+        }
+      },
+      {
+        "name": "Rohit",
+        "role": "Developer",
+        "kpi_score": 100,
+        "manager_notes": "Solidly performing as a Senior; leading by example",
+        "promoted": false,
+        "reason": "Rohit was promoted in Q2 and has successfully transitioned into the Senior Developer role. He spent Q3 leading the backend refactoring for our mobile app project. He hit 100% of his deliverables while ensuring that all new code followed the architectural blueprints he designed last quarter. He is providing exactly the kind of technical stability we need from our senior staff. He is currently in a stabilization phase before we look at Principal-level paths next year.",
+        "ai_analytics": {
+          "sentiment_score": 0.8,
+          "retention_risk_level": "Low",
+          "potential_rating": 9,
+          "collaboration_index": 0.88,
+          "skill_proficiency": {
+            "Debugging": 10,
+            "System_Design": 9,
+            "Mentoring": 7
+          },
+          "flight_risk_probability": 0.1
+        }
+      },
+      {
+        "name": "Pooja",
+        "role": "HR Recruiter",
+        "kpi_score": 108,
+        "manager_notes": "Overwhelmed by HR systems load; stress, late responses, and support bottleneck",
+        "promoted": false,
+        "reason": "Pooja continues to perform at a high level, but the global scaling of her automation tool in Q2 has led to a significant 'support' burden in Q3. While she hit 102% of her hiring target, her sentiment score has dropped as she balances recruitment with her unofficial role as the HR systems expert. We are not moving her up this quarter; instead, we are hiring a dedicated HR Ops assistant to offload the technical support from her so she can focus on high-level talent acquisition.",
+        "ai_analytics": {
+          "sentiment_score": 0.32,
+          "retention_risk_level": "Medium",
+          "potential_rating": 10,
+          "collaboration_index": 0.62,
+          "skill_proficiency": {
+            "Process_Automation": 10,
+            "Hiring_Volume": 10,
+            "Resilience": 6
+          },
+          "flight_risk_probability": 0.6
+        }
+      },
+      {
+        "name": "Nikhil",
+        "role": "Sales",
+        "kpi_score": 103,
+        "manager_notes": "Finally closed deals consistently throughout the month",
+        "promoted": true,
+        "reason": "Nikhil has finally broken the 'end-of-month panic' cycle. This quarter, he closed deals every single week, showing a 103% KPI with a much more balanced workload. This improvement in time management and pipeline health was the final piece of the puzzle we asked for in Q2. His ability to maintain steady activity proves he is ready for the Senior Sales Executive role. He has moved from being a 'talented but erratic' rep to a 'consistent professional.'",
+        "ai_analytics": {
+          "sentiment_score": 0.85,
+          "retention_risk_level": "Low",
+          "potential_rating": 8,
+          "collaboration_index": 0.82,
+          "skill_proficiency": {
+            "Teamwork": 10,
+            "Time_Management": 9,
+            "Consistency": 9
+          },
+          "flight_risk_probability": 0.08
+        }
+      },
+      {
+        "name": "Sneha",
+        "role": "Developer",
+        "kpi_score": 108,
+        "manager_notes": "Ready for Engineering Management",
+        "promoted": true,
+        "reason": "Sneha has been operating as a de-facto manager for the last six months. Her junior developers are now the highest-performing pod in Marcus’s group, and she has taken over all sprint planning and capacity tracking. Her 108% individual performance is secondary to the 20% increase in team performance she has facilitated. She is promoted to Engineering Manager. She will now have 4 direct reports and will focus on people development and cross-team resource allocation.",
+        "ai_analytics": {
+          "sentiment_score": 0.95,
+          "retention_risk_level": "Low",
+          "potential_rating": 10,
+          "collaboration_index": 1.0,
+          "skill_proficiency": {
+            "People_Management": 9,
+            "Sprint_Planning": 10,
+            "Velocity_Optimization": 10
+          },
+          "flight_risk_probability": 0.04
+        }
+      },
+      {
+        "name": "Manav",
+        "role": "HR Recruiter",
+        "kpi_score": 101,
+        "manager_notes": "Solid Recruiter II output",
+        "promoted": false,
+        "reason": "Manav was promoted in Q2 and is performing well at his new grade. His DEI initiatives have matured, and we now have a consistent flow of diverse talent across all departments. This quarter, he successfully hired three key Director-level roles using his new sourcing partnerships. He is currently providing great stability and value, and we are giving him the rest of the year to fully embed his diversity frameworks into the company’s global hiring policy.",
+        "ai_analytics": {
+          "sentiment_score": 0.82,
+          "retention_risk_level": "Low",
+          "potential_rating": 8,
+          "collaboration_index": 0.9,
+          "skill_proficiency": {
+            "DEI_Sourcing": 10,
+            "Executive_Search": 8,
+            "Policy_Design": 7
+          },
+          "flight_risk_probability": 0.09
+        }
+      }
+    ]
+  },
+  {
+    "quarter": "Q3",
+    "manager_name": "Sarah Jenkins",
+    "team": [
+      {
+        "name": "Aditi",
+        "role": "Sales",
+        "kpi_score": 110,
+        "manager_notes": "Expert at handling enterprise-level complexity",
+        "promoted": false,
+        "reason": "Aditi was promoted to Senior Account Executive in Q2 and is handling the larger territory flawlessly. Her forecasting accuracy has remained high at 94%, and her 110% KPI shows she is thriving under increased pressure. She is currently working on a massive cross-regional deal that could potentially change our Q4 outlook. She is performing exactly as a top-tier Senior rep should, and no further promotion is needed as she masters this larger territory.",
+        "ai_analytics": {
+          "sentiment_score": 0.88,
+          "retention_risk_level": "Low",
+          "potential_rating": 10,
+          "collaboration_index": 0.82,
+          "skill_proficiency": {
+            "Presentations": 10,
+            "Forecasting": 10,
+            "Strategic_Selling": 9
+          },
+          "flight_risk_probability": 0.05
+        }
+      },
+      {
+        "name": "Farhan",
+        "role": "Developer",
+        "kpi_score": 98,
+        "manager_notes": "Quality remains the top priority; very reliable",
+        "promoted": false,
+        "reason": "Farhan has maintained the 'quality-first' approach that earned him a promotion in Q2. His defect rate has stayed below 5% for two consecutive quarters. This quarter, he took on the role of 'Code Review Lead' for the junior pod, ensuring that his high standards are being passed down. He is hitting 98% of his deliverables while spending significant time on quality checks. He is a valued Senior contributor who is providing much-needed stability to the dev cycle.",
+        "ai_analytics": {
+          "sentiment_score": 0.82,
+          "retention_risk_level": "Low",
+          "potential_rating": 8,
+          "collaboration_index": 0.8,
+          "skill_proficiency": {
+            "QA_Awareness": 10,
+            "Debugging": 9,
+            "Code_Review": 9
+          },
+          "flight_risk_probability": 0.09
+        }
+      },
+      {
+        "name": "Lavanya",
+        "role": "HR Recruiter",
+        "kpi_score": 102,
+        "manager_notes": "Elite closer for executive talent",
+        "promoted": false,
+        "reason": "Lavanya is thriving in her Senior Recruiter role. This quarter, she closed the 'VP of Engineering' search, which had been open for six months, through sheer persistence and masterful negotiation. Her 102% KPI reflects the difficulty and high-value nature of her current portfolio. She is providing excellent strategic value, and we are not looking to move her up further this quarter; instead, we are giving her lead responsibility for the Q4 'Executive Search' project.",
+        "ai_analytics": {
+          "sentiment_score": 0.89,
+          "retention_risk_level": "Low",
+          "potential_rating": 9,
+          "collaboration_index": 0.85,
+          "skill_proficiency": {
+            "Negotiation": 10,
+            "Executive_Search": 10,
+            "Stakeholder_Engagement": 10
+          },
+          "flight_risk_probability": 0.06
+        }
+      },
+      {
+        "name": "Gaurav",
+        "role": "Sales",
+        "kpi_score": 96,
+        "manager_notes": "Finally hit the target threshold; velocity is improving",
+        "promoted": true,
+        "reason": "Gaurav has finally hit the 96% KPI mark, which is his highest performance of the year. He successfully shortened his sales cycle by 10 days this quarter by being much more aggressive in his follow-up and lead qualification. While his numbers are not the highest on the team, his consistent improvement over three quarters and his successful implementation of every piece of feedback demonstrate that he is ready for the Sales Executive II title. He is a growth success story.",
+        "ai_analytics": {
+          "sentiment_score": 0.8,
+          "retention_risk_level": "Low",
+          "potential_rating": 7,
+          "collaboration_index": 0.7,
+          "skill_proficiency": {
+            "Lead_Qualification": 9,
+            "Sales_Velocity": 8,
+            "Persistence": 9
+          },
+          "flight_risk_probability": 0.15
+        }
+      },
+      {
+        "name": "Tanvi",
+        "role": "Developer",
+        "kpi_score": 110,
+        "manager_notes": "Cross-team collaboration is now a part of her DNA",
+        "promoted": false,
+        "reason": "Tanvi was promoted to Senior Developer in Q2 and has not slowed down. She continues to lead the Engineering-Product syncs and has become the de-facto 'go-to' person for any cross-departmental technical issues. Her 110% KPI is a testament to her technical efficiency. She is performing exactly at the level expected of a top-tier Senior, and we are giving her the rest of the year to build her architectural portfolio before considering a move to a 'Staff' or 'Lead' role.",
+        "ai_analytics": {
+          "sentiment_score": 0.94,
+          "retention_risk_level": "Low",
+          "potential_rating": 10,
+          "collaboration_index": 0.98,
+          "skill_proficiency": {
+            "Technical_Solving": 10,
+            "Cross-team_Comms": 10,
+            "Architecture": 8
+          },
+          "flight_risk_probability": 0.04
+        }
+      },
+      {
+        "name": "Yash",
+        "role": "HR Recruiter",
+        "kpi_score": 98,
+        "manager_notes": "Solid performance in Recruiter II role",
+        "promoted": false,
+        "reason": "Yash was promoted in Q2 and has successfully maintained his new consultative approach. His post-interview feedback loops are now mandatory for all managers in Sarah's department, which has significantly improved the candidate NPS (Net Promoter Score). He hit 98% of his target while spending significant time refining the onboarding experience for new hires. He is performing well and providing great stability to the HR team.",
+        "ai_analytics": {
+          "sentiment_score": 0.83,
+          "retention_risk_level": "Low",
+          "potential_rating": 8,
+          "collaboration_index": 0.9,
+          "skill_proficiency": {
+            "Consultation": 9,
+            "Feedback_Loop": 10,
+            "Onboarding": 9
+          },
+          "flight_risk_probability": 0.08
+        }
+      }
+    ]
+  },
+  {
+    "quarter": "Q3",
+    "manager_name": "David O'Loghlen",
+    "team": [
+      {
+        "name": "Kritika",
+        "role": "Sales",
+        "kpi_score": 118,
+        "manager_notes": "Leading the regional expansion effort",
+        "promoted": false,
+        "reason": "Kritika remains the top performer in David's pod with a 118% KPI. This quarter, she took the lead on the 'Southeast Regional Expansion' plan, conducting all the initial market research and competitor analysis. She is performing well above her Senior grade, but since she was promoted in Q1, we are waiting until year-end to consider moving her to a 'Principal' or 'Regional Director' role. She is currently our most valuable asset in the sales org.",
+        "ai_analytics": {
+          "sentiment_score": 0.95,
+          "retention_risk_level": "Low",
+          "potential_rating": 10,
+          "collaboration_index": 0.9,
+          "skill_proficiency": {
+            "Conversion": 10,
+            "Market_Research": 9,
+            "Strategic_Expansion": 9
+          },
+          "flight_risk_probability": 0.02
+        }
+      },
+      {
+        "name": "Abhishek",
+        "role": "Developer",
+        "kpi_score": 102,
+        "manager_notes": "Expert in security-first development",
+        "promoted": false,
+        "reason": "Abhishek was promoted to Senior Developer in Q2 and has fully embraced his role as a security gatekeeper. He led the internal 'Security Best Practices' workshop for the whole engineering team this quarter. His 102% KPI shows he is balancing his individual output with these broader technical leadership tasks. He is currently providing the exact kind of high-reliability performance the Special Projects team requires.",
+        "ai_analytics": {
+          "sentiment_score": 0.84,
+          "retention_risk_level": "Low",
+          "potential_rating": 8,
+          "collaboration_index": 0.88,
+          "skill_proficiency": {
+            "Security_Protocol": 10,
+            "DevOps": 9,
+            "Technical_Leadership": 9
+          },
+          "flight_risk_probability": 0.07
+        }
+      },
+      {
+        "name": "Rekha",
+        "role": "HR Recruiter",
+        "kpi_score": 98,
+        "manager_notes": "Massive improvement in specialized sourcing",
+        "promoted": true,
+        "reason": "Rekha has completed a total turnaround this quarter. After struggling in Q1 and showing signs of improvement in Q2, she hit 98% of her target in Q3—her highest yet. Most importantly, she filled the three most difficult 'Security Cleared' roles that had been open for months. Her new sourcing strategy is working, and her persistence has paid off. She has earned her promotion to Recruiter II for her specialized expertise and successful turnaround.",
+        "ai_analytics": {
+          "sentiment_score": 0.9,
+          "retention_risk_level": "Low",
+          "potential_rating": 8,
+          "collaboration_index": 0.75,
+          "skill_proficiency": {
+            "Technical_Vetting": 9,
+            "Sourcing_Volume": 9,
+            "Persistence": 10
+          },
+          "flight_risk_probability": 0.05
+        }
+      },
+      {
+        "name": "Harsh",
+        "role": "Sales",
+        "kpi_score": 108,
+        "manager_notes": "Master of strategic account growth",
+        "promoted": false,
+        "reason": "Harsh was promoted to Senior Account Manager in Q2 and is already showing why. He grew the strategic account he landed last quarter by an additional 15% through meticulous planning and excellent stakeholder management. His 108% KPI is a reflection of his ability to mine value from complex accounts. He is currently exactly where he needs to be, providing high-level account stability and growth.",
+        "ai_analytics": {
+          "sentiment_score": 0.86,
+          "retention_risk_level": "Low",
+          "potential_rating": 9,
+          "collaboration_index": 0.85,
+          "skill_proficiency": {
+            "Strategic_Planning": 10,
+            "Stakeholder_Engagement": 10,
+            "Account_Expansion": 9
+          },
+          "flight_risk_probability": 0.06
+        }
+      },
+      {
+        "name": "Diya",
+        "role": "Developer",
+        "kpi_score": 118,
+        "manager_notes": "Ready for Staff Developer role",
+        "promoted": true,
+        "reason": "Diya has reached the technical pinnacle of the Senior Developer grade. Her impact this quarter was company-wide; she designed the new 'Shared Component Library' that is now being used by all 5 engineering teams. Her 118% KPI is incredible given the amount of cross-team consulting she does. She is promoted to Staff Developer, where she will focus purely on architectural vision and cross-departmental technical standards. She is a world-class talent.",
+        "ai_analytics": {
+          "sentiment_score": 0.93,
+          "retention_risk_level": "Low",
+          "potential_rating": 10,
+          "collaboration_index": 0.95,
+          "skill_proficiency": {
+            "Architecture": 10,
+            "Systems_Design": 10,
+            "Cross-Team_Consulting": 10
+          },
+          "flight_risk_probability": 0.05
+        }
+      },
+      {
+        "name": "Mohan",
+        "role": "HR Recruiter",
+        "kpi_score": 109,
+        "manager_notes": "Sustaining high performance; leading HR Ops",
+        "promoted": false,
+        "reason": "Mohan was promoted to Senior Recruiter in Q2 and has successfully taken over the HR Ops reporting for David’s group. He hit 109% of his hiring target while automating another 2 hours of weekly administrative tasks. He is providing excellent value as a senior leader in the HR department, and we are giving him the rest of the year to further refine our 'Recruitment ROI' metrics before looking at a Lead or Director path next year.",
+        "ai_analytics": {
+          "sentiment_score": 0.88,
+          "retention_risk_level": "Low",
+          "potential_rating": 9,
+          "collaboration_index": 0.92,
+          "skill_proficiency": {
+            "Niche_Sourcing": 10,
+            "Reporting": 10,
+            "Process_Optimization": 9
+          },
+          "flight_risk_probability": 0.04
+        }
+      }
+    ]
+  }
+]
