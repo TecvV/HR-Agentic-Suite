@@ -3,7 +3,18 @@
   "builds": [
     {
       "src": "scripts/app-server.js",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "frontend/**",
+          "data/**",
+          "policy.txt",
+          "Q1.JSON",
+          "Q2.JSON",
+          "Q3.json",
+          "Q4.json"
+        ]
+      }
     }
   ],
   "routes": [
@@ -11,18 +22,5 @@
       "src": "/.*",
       "dest": "scripts/app-server.js"
     }
-  ],
-  "functions": {
-    "scripts/app-server.js": {
-      "includeFiles": [
-        "frontend/**",
-        "data/**",
-        "policy.txt",
-        "Q1.JSON",
-        "Q2.JSON",
-        "Q3.json",
-        "Q4.json"
-      ]
-    }
-  }
+  ]
 }
