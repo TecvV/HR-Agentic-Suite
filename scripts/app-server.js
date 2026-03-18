@@ -3048,6 +3048,73 @@ async function main(options = {}) {
 
   const sessions = new Map();
   const resetTokens = new Map();
+  const fallbackUsersByEmail = new Map();
+  const fallbackUsersById = new Map();
+
+  function makeFallbackUserId() {
+    return crypto.randomBytes(12).toString("hex");
+  }
+
+  function getFallbackUserByEmail(email) {
+    return fallbackUsersByEmail.get(String(email || "").toLowerCase()) || null;
+  }
+
+  function getFallbackUserById(id) {
+    return fallbackUsersById.get(String(id || "").toLowerCase()) || null;
+  }
+
+  function upsertFallbackUser(user) {
+    if (!user || !user._id || !user.email) return null;
+    const email = String(user.email || "").toLowerCase();
+    const id = String(user._id);
+    const normalized = { ...user, _id: id, email };
+    fallbackUsersByEmail.set(email, normalized);
+    fallbackUsersById.set(id, normalized);
+    return normalized;
+  }
+
+  function createFallbackUser({ name, email, password, authProvider, googleSub }) {
+    const user = {
+      _id: makeFallbackUserId(),
+      name: name || "User",
+      email: String(email || "").toLowerCase(),
+      password: password || null,
+      authProvider: authProvider || "local",
+      googleSub: googleSub || null,
+      createdAt: new Date(),
+    };
+    return upsertFallbackUser(user);
+  }
+
+  async function findUserByEmail(email) {
+    if (usersCol) return usersCol.findOne({ email });
+    return getFallbackUserByEmail(email);
+  }
+
+  async function findUserById(id) {
+    if (usersCol) return usersCol.findOne({ _id: new ObjectId(id) });
+    return getFallbackUserById(id);
+  }
+
+  async function insertUser(doc) {
+    if (usersCol) return usersCol.insertOne(doc);
+    if (getFallbackUserByEmail(doc.email)) {
+      const err = new Error("E11000 duplicate key error");
+      err.code = "E11000";
+      throw err;
+    }
+    const user = createFallbackUser(doc);
+    return { insertedId: user._id, user };
+  }
+
+  async function updateUserById(id, update) {
+    if (usersCol) return usersCol.updateOne({ _id: new ObjectId(id) }, update);
+    const user = getFallbackUserById(id);
+    if (!user) return { matchedCount: 0, modifiedCount: 0 };
+    const next = { ...user, ...(update && update.$set ? update.$set : {}) };
+    upsertFallbackUser(next);
+    return { matchedCount: 1, modifiedCount: 1 };
+  }
 
   const { port } = parseArgs(process.argv.slice(2));
   const baseDir = path.resolve(process.cwd());
@@ -3074,20 +3141,31 @@ async function main(options = {}) {
     }
 
       try {
-        if (!usersCol) return null;
+        if (!usersCol) {
+          const user = getFallbackUserById(session.userId);
+          if (!user) return null;
+          return {
+            type: "user",
+            id: String(user._id),
+            name: user.name,
+            email: user.email,
+            sessionToken: token,
+            session,
+          };
+        }
         const user = await usersCol.findOne({ _id: new ObjectId(session.userId) });
         if (!user) return null;
-      return {
-        type: "user",
-        id: String(user._id),
-        name: user.name,
-        email: user.email,
-        sessionToken: token,
-        session,
-      };
-    } catch (_err) {
-      return null;
-    }
+        return {
+          type: "user",
+          id: String(user._id),
+          name: user.name,
+          email: user.email,
+          sessionToken: token,
+          session,
+        };
+      } catch (_err) {
+        return null;
+      }
   }
 
   async function getQuarterStatus(principal) {
@@ -3187,10 +3265,6 @@ async function main(options = {}) {
       }
 
       if (req.method === "POST" && req.url === "/api/auth/signup") {
-        if (!mongoAvailable || !usersCol) {
-          sendJson(res, 503, { error: "Signup is temporarily unavailable. Please use Guest mode." });
-          return;
-        }
         const rawBody = await readRequestBody(req);
         const body = JSON.parse(rawBody || "{}");
         const name = String(body.name || "").trim();
@@ -3204,7 +3278,7 @@ async function main(options = {}) {
 
         const digest = makePasswordDigest(password);
         try {
-          const result = await usersCol.insertOne({
+          const result = await insertUser({
             name,
             email,
             password: digest,
@@ -3212,17 +3286,18 @@ async function main(options = {}) {
             createdAt: new Date(),
           });
 
+          const user = result.user || { _id: result.insertedId, name, email };
           const token = createSessionToken();
           sessions.set(token, {
             type: "user",
-            userId: String(result.insertedId),
-            email,
+            userId: String(user._id),
+            email: user.email,
             workloadAssignedPeers: [],
           });
           sendJson(
             res,
             200,
-            { ok: true, user: { id: String(result.insertedId), name, email } },
+            { ok: true, user: { id: String(user._id), name: user.name, email: user.email }, fallback: !usersCol },
             { "Set-Cookie": `hr_session=${encodeURIComponent(token)}; HttpOnly; Path=/; SameSite=Lax` }
           );
         } catch (err) {
@@ -3236,16 +3311,12 @@ async function main(options = {}) {
       }
 
       if (req.method === "POST" && req.url === "/api/auth/login") {
-        if (!mongoAvailable || !usersCol) {
-          sendJson(res, 503, { error: "Login is temporarily unavailable. Please use Guest mode." });
-          return;
-        }
         const rawBody = await readRequestBody(req);
         const body = JSON.parse(rawBody || "{}");
         const email = String(body.email || "").trim().toLowerCase();
         const password = String(body.password || "");
 
-        const user = await usersCol.findOne({ email });
+        const user = await findUserByEmail(email);
         if (user && String(user.authProvider || "").toLowerCase() === "google" && !user.password) {
           sendJson(res, 401, { error: "This account uses Google Sign-In. Please continue with Google." });
           return;
@@ -3282,10 +3353,6 @@ async function main(options = {}) {
       }
 
       if (req.method === "POST" && req.url === "/api/auth/google") {
-        if (!mongoAvailable || !usersCol) {
-          sendJson(res, 503, { error: "Google login is temporarily unavailable. Please use Guest mode." });
-          return;
-        }
         const clientId = String(process.env.GOOGLE_CLIENT_ID || "").trim();
         if (!clientId) {
           sendJson(res, 503, { error: "GOOGLE_CLIENT_ID is not configured." });
@@ -3328,27 +3395,26 @@ async function main(options = {}) {
           return;
         }
 
-        let user = await usersCol.findOne({ email });
+        let user = await findUserByEmail(email);
         if (user) {
           const provider = String(user.authProvider || (user.password ? "local" : "google")).toLowerCase();
           if (provider === "local" || !!user.password) {
             sendJson(res, 409, { error: "Account with this gmail exists, please login/reset password." });
             return;
           }
-          await usersCol.updateOne(
-            { _id: user._id },
-            { $set: { name: name || user.name, authProvider: "google", googleSub: sub, lastLoginAt: new Date() } }
-          );
-          user = await usersCol.findOne({ _id: user._id });
+          await updateUserById(user._id, {
+            $set: { name: name || user.name, authProvider: "google", googleSub: sub, lastLoginAt: new Date() },
+          });
+          user = await findUserById(user._id);
         } else {
-          const result = await usersCol.insertOne({
+          const result = await insertUser({
             name: name || "Google User",
             email,
             authProvider: "google",
             googleSub: sub,
             createdAt: new Date(),
           });
-          user = { _id: result.insertedId, name: name || "Google User", email };
+          user = result.user || { _id: result.insertedId, name: name || "Google User", email };
         }
 
         const token = createSessionToken();
@@ -3368,10 +3434,6 @@ async function main(options = {}) {
       }
 
       if (req.method === "POST" && req.url === "/api/auth/forgot-password") {
-        if (!mongoAvailable || !usersCol) {
-          sendJson(res, 503, { error: "Password reset is temporarily unavailable." });
-          return;
-        }
         const rawBody = await readRequestBody(req);
         const body = JSON.parse(rawBody || "{}");
         const email = String(body.email || "").trim().toLowerCase();
@@ -3380,7 +3442,7 @@ async function main(options = {}) {
           return;
         }
 
-        const user = await usersCol.findOne({ email });
+        const user = await findUserByEmail(email);
         if (!user) {
           sendJson(res, 404, { error: "This email ID doesn't exist, create a new account." });
           return;
@@ -3445,10 +3507,6 @@ async function main(options = {}) {
       }
 
       if (req.method === "POST" && req.url === "/api/auth/reset-password") {
-        if (!mongoAvailable || !usersCol) {
-          sendJson(res, 503, { error: "Password reset is temporarily unavailable." });
-          return;
-        }
         const rawBody = await readRequestBody(req);
         const body = JSON.parse(rawBody || "{}");
         const email = String(body.email || "").trim().toLowerCase();
@@ -3468,10 +3526,7 @@ async function main(options = {}) {
         }
 
         const digest = makePasswordDigest(newPassword);
-        await usersCol.updateOne(
-          { _id: new ObjectId(tokenData.userId), email },
-          { $set: { password: digest } }
-        );
+        await updateUserById(tokenData.userId, { $set: { password: digest } });
         resetTokens.delete(token);
         sendJson(res, 200, { ok: true, message: "Password reset successful." });
         return;
