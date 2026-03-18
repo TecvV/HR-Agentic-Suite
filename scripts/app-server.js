@@ -3017,8 +3017,9 @@ const MIME_TYPES = {
   ".ico": "image/x-icon",
 };
 
-async function main() {
+async function main(options = {}) {
   loadEnvFile();
+  const listen = options.listen !== false;
 
   const mongoUri = process.env.MONGODB_URI;
   const dbName = process.env.MONGODB_DB;
@@ -4293,12 +4294,31 @@ async function main() {
     }
   });
 
-  server.listen(port, () => {
-    process.stdout.write(`App server running at http://localhost:${port}/\n`);
-  });
+  if (listen) {
+    server.listen(port, () => {
+      process.stdout.write("App server running at http://localhost:" + port + "/\n");
+    });
+  }
+  return server;
 }
 
-main().catch((err) => {
-  process.stderr.write(`Error: ${err.message}\n`);
-  process.exit(1);
-});
+if (process.env.VERCEL) {
+  let cachedServer = null;
+  module.exports = async (req, res) => {
+    try {
+      if (!cachedServer) {
+        cachedServer = await main({ listen: false });
+      }
+      return cachedServer.emit("request", req, res);
+    } catch (err) {
+      res.statusCode = 500;
+      res.setHeader("Content-Type", "text/plain; charset=utf-8");
+      res.end(err?.message || "Server error");
+    }
+  };
+} else {
+  main().catch((err) => {
+    process.stderr.write(`Error: ${err.message}\n`);
+    process.exit(1);
+  });
+}
